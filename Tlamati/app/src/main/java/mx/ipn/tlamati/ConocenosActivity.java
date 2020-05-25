@@ -17,9 +17,10 @@ import java.net.URI;
 
 public class ConocenosActivity extends AppCompatActivity {
     GridView gridView_conocenos;
-    int[] btnImagesconoc = {R.mipmap.boton_facebook,R.mipmap.boton_instagram,
-            R.mipmap.boton_twiiter,R.mipmap.boton_correo,
-            R.mipmap.boton_pagina_web};
+    int[] btnImagesconoc = {R.mipmap.boton_facebook,
+            R.mipmap.boton_twiiter,R.mipmap.boton_correo};
+           // R.mipmap.boton_pagina_web Este bottón queda pendiente, ya que no se ha mandado la info de la pagina web
+            //R.mipmap.boton_instagram Este boton, el de instagram tambien XD
     ImageButton btn_regreso_conoc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,39 +44,39 @@ public class ConocenosActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 if(i == 0){
                     //BOTON Face
-                    String url = "http://www.example.com";
+                    String url = "https://www.facebook.com/tlamatiapp/?modal=admin_todo_tour";
                     Intent webintent = new Intent(Intent.ACTION_VIEW);
                     webintent.setData(Uri.parse(url));
                     startActivity(webintent);
                 }
-                if(i == 1){
+                /*if(i == 1){
                     //BOTON insta
                     String url = "http://www.example.com";
                     Intent webintent = new Intent(Intent.ACTION_VIEW);
                     webintent.setData(Uri.parse(url));
                     startActivity(webintent);
+                }*/
+                if(i == 1){
+                    //BOTON tweet
+                    String url = "https://twitter.com/Tlamati2";
+                    Intent webintent = new Intent(Intent.ACTION_VIEW);
+                    webintent.setData(Uri.parse(url));
+                    startActivity(webintent);
                 }
                 if(i == 2){
-                    //BOTON tweet
-                    String url = "http://www.example.com";
-                    Intent webintent = new Intent(Intent.ACTION_VIEW);
-                    webintent.setData(Uri.parse(url));
-                    startActivity(webintent);
-                }
-                if(i == 3){
                     //BOTON mail
-                    String url = "http://www.example.com";
+                    String url = "https://mail.google.com/mail/u/1/#inbox";
                     Intent webintent = new Intent(Intent.ACTION_VIEW);
                     webintent.setData(Uri.parse(url));
                     startActivity(webintent);
                 }
-                if(i == 4){
+                /*if(i == 4){
                     //BOTON web
                     String url = "http://www.example.com";
                     Intent webintent = new Intent(Intent.ACTION_VIEW);
                     webintent.setData(Uri.parse(url));
                     startActivity(webintent);
-                }
+                }*/
 
             }
         });

@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.internal.Storage;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -53,6 +54,8 @@ public class DownloadActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 download("sopa_de_letras");
+
+                Toast.makeText(getApplicationContext(), "se ha iniciado la descarga", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -61,6 +64,7 @@ public class DownloadActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 download("completa_la_palabra");
+                Toast.makeText(getApplicationContext(), "se ha iniciado la descarga", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -69,6 +73,7 @@ public class DownloadActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 download("tripas_de_gato");
+                Toast.makeText(getApplicationContext(), "se ha iniciado la descarga", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -77,6 +82,7 @@ public class DownloadActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 download("piramide");
+                Toast.makeText(getApplicationContext(), "se ha iniciado la descarga", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -84,7 +90,9 @@ public class DownloadActivity extends AppCompatActivity {
         btn_crucigrama.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 download("crucigrama");
+                Toast.makeText(getApplicationContext(), "se ha iniciado la descarga", Toast.LENGTH_SHORT).show();
             }
         });
 
