@@ -78,6 +78,7 @@
         android:layout_below="@id/txt_quejas"/>
 
     <ImageButton
+        android:id="@+id/btn_enviar"
         android:layout_alignParentRight="true"
         android:layout_width="75dp"
         android:layout_height="50dp"

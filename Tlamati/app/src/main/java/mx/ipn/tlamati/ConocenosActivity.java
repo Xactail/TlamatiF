@@ -9,9 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.net.URI;
 
@@ -19,9 +21,12 @@ public class ConocenosActivity extends AppCompatActivity {
     GridView gridView_conocenos;
     int[] btnImagesconoc = {R.mipmap.boton_facebook,
             R.mipmap.boton_twiiter,R.mipmap.boton_correo};
-           // R.mipmap.boton_pagina_web Este bottón queda pendiente, ya que no se ha mandado la info de la pagina web
-            //R.mipmap.boton_instagram Este boton, el de instagram tambien XD
+    // R.mipmap.boton_pagina_web Este bottón queda pendiente, ya que no se ha mandado la info de la pagina web
+    //R.mipmap.boton_instagram Este boton, el de instagram tambien XD
     ImageButton btn_regreso_conoc;
+    ImageButton btn_enviar;
+    EditText textfield;
+    EditText mailfield;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +38,17 @@ public class ConocenosActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(intent);
+            }
+        });
+        textfield = (EditText) findViewById(R.id.textfield);
+        mailfield = (EditText) findViewById(R.id.textfield);
+        btn_enviar = (ImageButton) findViewById(R.id.btn_enviar);
+        btn_enviar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),"Correo enviado!",Toast.LENGTH_SHORT).show();
+                textfield.setText("");
+                mailfield.setText("");
             }
         });
         gridView_conocenos = (GridView) findViewById(R.id.gridview_conocenos);
