@@ -21,6 +21,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.unity3d.player.UnityPlayerActivity;
+
 public class LearnActivity extends AppCompatActivity {
     GridView gridView_learn;
     int[] btnImageslearn = {R.mipmap.boton_caracteristicas,R.mipmap.boton_aportaciones,R.mipmap.boton_conquista_de_tenochtitlan,R.mipmap.boton_arquitectura};
@@ -74,7 +76,7 @@ public class LearnActivity extends AppCompatActivity {
                 if(i == 3){
                     //BOTON ARQUITECTURA
                     if(ContextCompat.checkSelfPermission(LearnActivity.this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED){
-                        Intent intent = new Intent (getApplicationContext(),ArquitecturaActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                        Intent intent = new Intent (getApplication(), UnityPlayerActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                         startActivity(intent);
                         finish();
                     } else{
